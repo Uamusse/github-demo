@@ -1,0 +1,76 @@
+Basico do git
+edson@linuxmint:~$ git version
+git version 2.23.0
+edson@linuxmint:~$ mkdir Git
+edson@linuxmint:~$ cd Git/
+edson@linuxmint:~/Git$ pwd
+/home/edson/Git
+edson@linuxmint:~/Git$ git version
+git version 2.23.0
+edson@linuxmint:~/Git$ git config --global user.name "Edson Uamusse"
+edson@linuxmint:~/Git$ git config --global user.email "edson50uamusse@gmail.com" 
+edson@linuxmint:~/Git$ git config --global --list
+user.name=Edson Uamusse
+user.email=edson50uamusse@gmail.com
+edson@linuxmint:~/Git$ git clone https://github.com/Uamusse/github-demo.git
+Cloning into 'github-demo'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+edson@linuxmint:~/Git$ ls
+github-demo
+edson@linuxmint:~/Git$ cd github-demo/
+edson@linuxmint:~/Git/github-demo$ ls
+README.md
+edson@linuxmint:~/Git/github-demo$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+edson@linuxmint:~/Git/github-demo$ echo "Teste de git para o demo" >> teste.txt
+edson@linuxmint:~/Git/github-demo$ ls
+README.md  teste.txt
+edson@linuxmint:~/Git/github-demo$ cat teste.txt 
+Teste de git para o demo
+edson@linuxmint:~/Git/github-demo$ git status 
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	teste.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+edson@linuxmint:~/Git/github-demo$ git add teste.txt 
+edson@linuxmint:~/Git/github-demo$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   teste.txt
+
+edson@linuxmint:~/Git/github-demo$ git commit -m "Adicionando o ficheiro teste.txt"
+[master 84968c0] Adicionando o ficheiro teste.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 teste.txt
+edson@linuxmint:~/Git/github-demo$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+edson@linuxmint:~/Git/github-demo$ git push origin master
+Username for 'https://github.com': Uamusse
+Password for 'https://Uamusse@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 320 bytes | 320.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/Uamusse/github-demo.git
+   ee7b041..84968c0  master -> master
+edson@linuxmint:~/Git/github-demo$ 
