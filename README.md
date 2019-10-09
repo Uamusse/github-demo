@@ -1,2 +1,2 @@
-# github-demo
-Um tutorial sobre o funcionamento de git
+# Github-demo
+Um tutorial sobre o funcionamento de git...
